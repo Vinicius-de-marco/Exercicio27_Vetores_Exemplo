@@ -4,26 +4,28 @@ import java.util.Scanner;
 public class Principal {
 
     public static void main(String[] args) {
-        int n = 5;
-        int vetor[] = new int[n];
+        int vetor[] = new int[1000];
         Scanner leitor = new Scanner(System.in);
 
         //entrada
-        for (int i = 0; i < n; i++) {
+        System.out.println("Digite a quantidade de numeros: ");
+        int N = Integer.parseInt(leitor.nextLine());
+        
+        for (int i = 0; i < N; i++) {
             System.out.println("Digite o valor(" + i + "):");
             vetor[i] = Integer.parseInt(leitor.nextLine());
         }
         //processamento
-        for (int i = 0; i < n / 2; i++) {
+        for (int i = 0; i < N / 2; i++) {
             int aux;
             aux = vetor[i];
-            vetor[i] = vetor[n - 1 - i];
-            vetor[n - 1 - i] = aux;
+            vetor[i] = vetor[N - 1 - i];
+            vetor[N - 1 - i] = aux;
 
         }
 
         //saída
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < N; i++) {
             System.out.println("Vetor(" + i + "):" + vetor[i]);
         }
     }
